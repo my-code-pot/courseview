@@ -1,10 +1,13 @@
 import styled from "styled-components";
-
+import Link from "next/link";
 const SideBarListItem = ({department}) => {
+    const link='/'+department
     return (
-      <ListItem className="bg-sky-600 hover:bg-sky-700 " >
-          {department}
-      </ListItem>
+      <Link href={link}>
+        <ListItem className="bg-sky-600 hover:bg-sky-700 " >
+            {department}
+        </ListItem>
+      </Link>
     )
   };
   const ListItem = styled.div.attrs({
