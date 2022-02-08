@@ -8,16 +8,14 @@ const SideBarListItem = ({department}) => {
     )
   };
   const ListItem = styled.div.attrs({
-    className: "bg-gray-200 hover:bg-red-300 ",
+    className: "bg-gray-200 hover:bg-red-300 font-bold text-2xl text-slate-700 rounded-lg",
   })`
-    color:black;
     margin:10px;
     text-align:center;
-    width:200px;
+    width:250px;
     border-color:red;
     border: 1px solid red; 
-    border-radius:10px;
-    font:Verdana,Tahoma,"DejaVu Sans",sans-serif;
-    font-size: 20px;
+    border-radius:20px;
+    padding:3px;
   `
   export default SideBarListItem;
