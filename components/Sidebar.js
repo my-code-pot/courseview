@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import SideBarListItem from "./SideBarListItem";
 const SideBar = () => {
-    const departments=["Chemistry","Physics", "Math","Art History","Arabic", "Art and Art Histor",
+    const departments=["Chemistry","Physics", "Math","Art History","Arabic", "Art and Art History",
     "Asian Studies","Biology","Black Studies","Chemistry and Biochemistry", "Classics","Cognitive Science",
     "Comparative Literature","Computer Science", "Economics", "Educational Studies", "Engineering",
      "English Literature", "Environmental Studies","Film and Media Studies","Gender and Sexuality Studies",
