@@ -5,20 +5,11 @@ import Link from "next/link";
 const Navbar = () => {
   return (
     <Nav className="flex justify-center space-x-6">
-      <Link href="/">
-        <a
-          href=""
+      <Link href="/"
           className="font-bold px-3 py-2 text-slate-700 rounded-lg hover:bg-red-100 hover:text-slate-900"
         >
           Home
-        </a>
       </Link>
-      <a
-        href="/about"
-        className="font-bold px-3 py-2 text-slate-700 rounded-lg hover:bg-red-100 hover:text-slate-900"
-      >
-        About
-      </a>
     </Nav>
   );
 };
