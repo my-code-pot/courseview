@@ -1,3 +1,3 @@
-await client.db("CourseView").collection("departmentsCourses").insertOne({
-        //     "name":"physics"
-        // })
+export default function handler(req, res) {
+//   res.status(200).json({ name: 'John Doe' })
+// }
