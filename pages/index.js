@@ -1,14 +1,9 @@
 import Head from "next/head";
-import Image from "next/image";
 // import styles from "../styles/Home.module.css";
 import styled from "styled-components";
-import connectToMongo from "../util/mongo";
 
 export default function Home() {
-  // const fetchdata = async ()=>{
-  //   const request=await fetch('/api/getDepts');
-  //   console.log(await request.json());
-  // }
+
   return (
     <div>
       <Head>
@@ -20,19 +15,4 @@ export default function Home() {
   );
 }
 
-// export async function getStaticProps() {
-//   const client = await connectToMongo();
-//   const db = client.db();
-//   const dept = db.collection("departmentsCourses");
-//   const departments = await dept.find({}).toArray();
-//   client.close();
-//   return {
-//     props: {
-//       departments: departments.map((d) => ({
-//         id: d._id.toString(),
-//         title: d.name,
-//         courses: d.courses,
-//       })),
-//     },
-//   };
-// }
+
