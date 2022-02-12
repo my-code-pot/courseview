@@ -21,15 +21,11 @@ export async function getStaticProps() {
   const client = await connectToMongo();
   const db = client.db();
   const dept = db.collection("departmentsCourses");
-  const departments = await dept.find({}).toArray();
-  client.close();
+  const departments = await dept.find().toArray();
+
   return {
     props: {
-      departments: departments.map((d) => ({
-        id: d._id.toString(),
-        title: d.name,
-        courses: d.courses,
-      })),
+      departments,
     },
   };
 }

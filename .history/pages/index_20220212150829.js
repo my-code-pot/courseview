@@ -22,14 +22,10 @@ export async function getStaticProps() {
   const db = client.db();
   const dept = db.collection("departmentsCourses");
   const departments = await dept.find({}).toArray();
-  client.close();
+
   return {
     props: {
-      departments: departments.map((d) => ({
-        id: d._id.toString(),
-        title: d.name,
-        courses: d.courses,
-      })),
+      departments,
     },
   };
 }

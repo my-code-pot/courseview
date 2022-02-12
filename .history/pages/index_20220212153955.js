@@ -18,11 +18,9 @@ export default function Home(props) {
 }
 
 export async function getStaticProps() {
-  const client = await connectToMongo();
-  const db = client.db();
-  const dept = db.collection("departmentsCourses");
-  const departments = await dept.find({}).toArray();
-  client.close();
+  const departments = await fetch("/api/getDepts");
+  console.log(
+)
   return {
     props: {
       departments: departments.map((d) => ({

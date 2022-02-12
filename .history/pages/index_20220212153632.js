@@ -4,7 +4,7 @@ import Image from "next/image";
 import styled from "styled-components";
 import connectToMongo from "../util/mongo";
 
-export default function Home(props) {
+export default function Home() {
   console.log(props);
   return (
     <div>
@@ -17,19 +17,15 @@ export default function Home(props) {
   );
 }
 
-export async function getStaticProps() {
-  const client = await connectToMongo();
-  const db = client.db();
-  const dept = db.collection("departmentsCourses");
-  const departments = await dept.find({}).toArray();
-  client.close();
-  return {
-    props: {
-      departments: departments.map((d) => ({
-        id: d._id.toString(),
-        title: d.name,
-        courses: d.courses,
-      })),
-    },
-  };
-}
+// export async function getStaticProps() {
+//   const departments = await fetch("http://localhost:3000/api/getDepts");
+//   return {
+//     props: {
+//       departments: departments.map((d) => ({
+//         id: d._id.toString(),
+//         title: d.name,
+//         courses: d.courses,
+//       })),
+//     },
+//   };
+// }

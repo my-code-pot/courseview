@@ -22,7 +22,8 @@ export async function getStaticProps() {
   const db = client.db();
   const dept = db.collection("departmentsCourses");
   const departments = await dept.find({}).toArray();
-  client.close();
+  console.log(departments);
+
   return {
     props: {
       departments: departments.map((d) => ({

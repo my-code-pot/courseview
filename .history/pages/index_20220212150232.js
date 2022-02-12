@@ -5,7 +5,7 @@ import styled from "styled-components";
 import connectToMongo from "../util/mongo";
 
 export default function Home(props) {
-  console.log(props);
+  console.log
   return (
     <div>
       <Head>
@@ -18,18 +18,14 @@ export default function Home(props) {
 }
 
 export async function getStaticProps() {
-  const client = await connectToMongo();
-  const db = client.db();
-  const dept = db.collection("departmentsCourses");
-  const departments = await dept.find({}).toArray();
-  client.close();
+  client = await connectToMongo();
+  db = client.db();
+  course = db.collection("departmentsCourses");
+  const departments = await collection.find().toArray();
+
   return {
     props: {
-      departments: departments.map((d) => ({
-        id: d._id.toString(),
-        title: d.name,
-        courses: d.courses,
-      })),
+      departments,
     },
   };
 }
