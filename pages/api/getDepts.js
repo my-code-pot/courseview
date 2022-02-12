@@ -7,10 +7,11 @@ const handler = async (req, res) => {
     const db = client.db();
     const dept = db.collection("departmentsCourses");
     const departments = await dept.find({}).toArray();
+    const departmentsNames=departments.map((department)=>(department.name))
     client.close();
 
     if (departments.length > 0) {
-      res.status(200).json(departments);
+      res.status(200).json(departmentsNames);
     } else {
       res.status(401).json({ message: "No departments found" });
     }
