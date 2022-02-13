@@ -2,8 +2,7 @@ import Head from "next/head";
 // import styles from "../styles/Home.module.css";
 import styled from "styled-components";
 
-export default function Home() {
-
+export default function Home(props) {
   return (
     <div>
       <Head>
@@ -14,5 +13,13 @@ export default function Home() {
     </div>
   );
 }
+export async function getStaticProps(context) {
+    const response=await fetch('http://localhost:3000/api/getDepts');
+    const data=await response.json(); 
+  return {
+    props: {data}, // will be passed to the page component as props
+  }
+}
+
 
 

@@ -3,12 +3,12 @@ import Navbar from './Navbar'
 import Footer from './Footer'
 import SideBar from './Sidebar';
 import styled from 'styled-components';
-const Layout = ({children}) => {
+const Layout = (props) => {
   return (
     <div >
         <Navbar />
-        <SideBar/>
-        {children}
+        <SideBar departments={props.departments}/>
+        {props.children}
         <Footer />
     </div>
   )
