@@ -15,7 +15,8 @@ export default function Home(props) {
 }
 export async function getStaticProps(context) {
     const response=await fetch('http://localhost:3000/api/getDepts');
-    const data=await response.json(); 
+    const data=await response.json();
+    // console.log(data) 
   return {
     props: {data}, // will be passed to the page component as props
   }

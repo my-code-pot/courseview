@@ -65,7 +65,6 @@ const SideBar = () => {
     margin:30px;
     align:center;
     overflow-y: scroll;
-    height:580px;
     `
 
   export default SideBar;
