@@ -2,10 +2,17 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import Navbar from '../../components/Navbar';
 import CoursesList from '../../components/CoursesList';
+import SideBar from '../../components/Sidebar';
 function index({courses}){
     const router = useRouter();
     const { department } = router.query;
-  return <CoursesList listOfCourses={courses}></CoursesList>
+  return (
+    <div className='relative'>
+      <SideBar/>
+      <h1 className='ml-8 font-bold underline decoration-slate-700 decoration-2 underline-offset-2 w-3/4 color:red-800 text-center text-3xl px-2 py-3 text-red-700 rounded-lg'>{department} courses </h1>
+      <CoursesList listOfCourses={courses}></CoursesList>
+    </div>
+  )
 };
 export async function getStaticPaths() {
   const response=await fetch('http://localhost:3000/api/getDepts');

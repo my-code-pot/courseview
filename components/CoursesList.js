@@ -19,7 +19,7 @@ const CoursesList = ({listOfCourses}) => {
   };
   const StyledCoursesList=styled.div`
     display:flex;
-    height:800px;
+    height:500px;
     position:relative;
     top:40px;
     width:1150px;
