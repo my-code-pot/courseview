@@ -1,16 +1,11 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import Navbar from '../../components/Navbar';
-
+import CoursesList from '../../components/CoursesList';
 function index({courses}){
     const router = useRouter();
     const { department } = router.query;
-    const coursesList=courses.map(course =>{
-      return <div>{course}</div>;
-    })
-  return <div>
-      {coursesList}
-  </div>;
+  return <CoursesList listOfCourses={courses}></CoursesList>
 };
 export async function getStaticPaths() {
   const response=await fetch('http://localhost:3000/api/getDepts');
