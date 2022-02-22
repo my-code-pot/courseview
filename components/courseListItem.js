@@ -2,9 +2,11 @@ import styled from "styled-components";
 import Link from "next/link";
 const CourseListItem = ({course}) => {
     return (
-        <StyledCourseListItem >
+        <Link href={"/courses/"+course}>
+        <StyledCourseListItem>
             {course}
         </StyledCourseListItem>
+        </Link>
     )
   };
   const StyledCourseListItem = styled.div.attrs({
