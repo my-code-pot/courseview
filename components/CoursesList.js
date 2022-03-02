@@ -19,10 +19,10 @@ const CoursesList = ({listOfCourses}) => {
   };
   const StyledCoursesList=styled.div`
     display:flex;
-    height:500px;
+    height:1000px;
     position:relative;
     top:40px;
-    width:1150px;
+    width:150vh;
     margin:30px;
     align:center;
     overflow-y: scroll;
