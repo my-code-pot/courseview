@@ -16,7 +16,6 @@ const StyledCommentText = styled.div.attrs({
     font-size: 14px;
     font-weight: 400;
     line-height: 21px;
-    width:80%;
     text-decoration: none solid rgb(26, 26, 27);
     text-align: start;
     color: rgb(26, 26, 27);

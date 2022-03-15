@@ -7,11 +7,14 @@ const handler = async (req, res) => {
     const db = client.db();
     const dept = db.collection("departmentsCourses");
     const departments = await dept.find({}).toArray();
-    const departmentsNames=departments.map((department)=>(department.name))
-    client.close();
+    let totalCourses=[];
+    for (let department of departments){
+        totalCourses=totalCourses.concat(department.courses);
+    }
+    client.close(); 
 
-    if (departments.length > 0) {
-      res.status(200).json(departmentsNames);
+    if (totalCourses.length > 0) {
+      res.status(200).json(totalCourses);
     } else {
       res.status(401).json({ message: "No departments found" });
     }

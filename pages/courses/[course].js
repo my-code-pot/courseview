@@ -7,25 +7,16 @@ const course = (props) => {
   const { course } = router.query;
   return (
     <div className="absolute">
-    {/* <SideBar departments={props.data}></SideBar> */}
+    <SideBar departments={props.data}></SideBar>
     <CommentsList ></CommentsList>
     </div>
   );
 };
 
 export async function getStaticPaths() {
-  const response=await fetch('http://localhost:3000/api/getDepts');
-  const departments=await response.json();
-  const totalCourses=[];
-  for (let department in departments){
-    const response1=await fetch('http://localhost:3000/api/'+department);
-    const departmentCourses=await response1.json();
-    for (let course in departmentCourses){
-      totalCourses.push(course);
-    }
-  }
-  console.log(totalCourses); 
-  const paths=totalCourses.map(course=>{
+  const response=await fetch('http://localhost:3000/api/getAllCourses');
+  const courses=await response.json(); 
+  const paths=courses.map(course=>{
     return {
       params: {course:course
       }
@@ -38,8 +29,7 @@ export async function getStaticPaths() {
 }
 export async function getStaticProps(context) {
   const response=await fetch('http://localhost:3000/api/getDepts');
-  const data=await response.json();
-  console.log(data) 
+  const data=await response.json(); 
 return {
   props: {data}, // will be passed to the page component as props
 }

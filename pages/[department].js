@@ -32,7 +32,6 @@ export async function getStaticProps(context) {
   const department=context.params.department;
   const res=await fetch('http://localhost:3000/api/getDepts');
   const departments=await res.json();
-  console.log(department);
   const response=await fetch('http://localhost:3000/api/'+department);
   const courses=await response.json(); 
 return {

@@ -15,8 +15,8 @@ const CommentsList = () => {
   const StyledCommentsList = styled.div.attrs({
     className: "",
   })`
-  width:40%;
+  width:70%;
   position:relative;
-  left:30%;
+  left:20%;
   `
   export default CommentsList;
