@@ -17,10 +17,11 @@ const SideBarListItem = ({department}) => {
     background-color: rgba(180,49,53,var(--tw-bg-opacity));
     --tw-text-opacity: 1;
     color: rgba(255,255,255,var(--tw-text-opacity));
-    margin:10px;
+    margin-top:10px;
     text-align:center;
     width:250px;
     border-radius:20px;
     padding:3px;
+    cursor: pointer
   `
   export default SideBarListItem;

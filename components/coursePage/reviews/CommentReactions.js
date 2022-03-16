@@ -14,8 +14,7 @@ const CommentReactions = () => {
     className: "flex",
   })`
     position: relative;
-    left:40px;
-    padding:3px;
+    left:6%;
   `
   const ReactionsNumber = styled.div.attrs({
     className: "flex",

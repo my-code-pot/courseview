@@ -1,7 +1,6 @@
 import Layout from "../components/Layout";
 import "../styles/global.css";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
-import SideBar from "../components/Sidebar";
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;

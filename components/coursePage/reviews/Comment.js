@@ -13,10 +13,10 @@ const Comment = () => {
     )
   };
   const StyledComment = styled.div.attrs({
-    className: "relative",
+    className: "",
   })`
-     background-color:#fafafa;;
-     margin:30px;
+     background-color:#fafafa;
+     margin-top:5%;
      border-radius: 25px;
   `
 

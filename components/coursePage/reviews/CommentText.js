@@ -18,6 +18,7 @@ const StyledCommentText = styled.div.attrs({
     line-height: 21px;
     text-decoration: none solid rgb(26, 26, 27);
     text-align: start;
+    width: 90%;
     color: rgb(26, 26, 27);
   `
 export default CommentText;

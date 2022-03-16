@@ -22,9 +22,8 @@ const CoursesList = ({listOfCourses}) => {
     height:1000px;
     position:relative;
     top:40px;
-    width:130vh;
-    margin:30px;
-    align:center;
+    width:80%;
+    margin-left:7%;
     overflow-y: scroll;
     `
 

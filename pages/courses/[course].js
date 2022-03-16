@@ -1,18 +1,17 @@
 import React from "react";
 import { useRouter } from 'next/router';
-import CommentsList from '../../components/reviews/commentsList'
-import SideBar from '../../components/Sidebar';
+import SideBar from '../../components/sideBar/Sidebar';
+import CoursePageMainDiv from "../../components/coursePage/CoursePageMainDiv";
 const course = (props) => {
   const router = useRouter();
   const { course } = router.query;
   return (
-    <div className="absolute">
+    <div className="flex">
     <SideBar departments={props.data}></SideBar>
-    <CommentsList ></CommentsList>
+    <CoursePageMainDiv courseName={course}></CoursePageMainDiv> 
     </div>
   );
 };
-
 export async function getStaticPaths() {
   const response=await fetch('http://localhost:3000/api/getAllCourses');
   const courses=await response.json(); 
@@ -24,14 +23,14 @@ export async function getStaticPaths() {
   })
   return {
     paths: paths,
-    fallback: true
+    fallback: "blocking"
   }
 }
 export async function getStaticProps(context) {
   const response=await fetch('http://localhost:3000/api/getDepts');
   const data=await response.json(); 
-return {
-  props: {data}, // will be passed to the page component as props
-}
+  return {
+    props: {data}, // will be passed to the page component as props
+  }
 }
 export default course;

@@ -14,5 +14,6 @@ const CourseListItem = ({course}) => {
   })`
     margin:13px;
     padding:3px;
+    cursor: pointer;
   `
   export default CourseListItem;
