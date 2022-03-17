@@ -11,9 +11,9 @@ const SideBarListItem = ({department}) => {
     )
   };
   const ListItem = styled.div.attrs({
-    className: "bg-gray-200 hover:bg-red-300 font-bold text-2xl text-slate-700 rounded-lg",
+    className: " hover:bg-red-300 font-bold text-2xl rounded-lg",
   })`
-    --tw-bg-opacity: 1;
+
     background-color: rgba(180,49,53,var(--tw-bg-opacity));
     --tw-text-opacity: 1;
     color: rgba(255,255,255,var(--tw-text-opacity));

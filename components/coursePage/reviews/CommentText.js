@@ -8,13 +8,13 @@ const CommentText = ({ text }) => {
   )
 };
 const StyledCommentText = styled.div.attrs({
-  className: "",
+  className: " text-slate-700",
 })`
     position: relative;
     left:40px;
     font-family: Noto Sans, Arial, sans-serif;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 21px;
     text-decoration: none solid rgb(26, 26, 27);
     text-align: start;
