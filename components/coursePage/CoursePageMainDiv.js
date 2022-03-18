@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import { Header } from "../../styles/header.style";
+import { BlackText } from "../../styles/text.style";
 import CommentsList from "./reviews/commentsList";
 import CourseDescription from "./CourseDescription";
 import DataSummary from "./dataSummary/DataSummary";
 const CoursePageMainDiv = (props) => {
     return (
         <StyledCoursePageMainDiv>
-            <Header className="text-3xl" > {props.courseName}</Header>
+            <BlackText className="text-3xl" > {props.courseName}</BlackText>
             <CourseDescription></CourseDescription>
             <DataSummary></DataSummary>
             <CommentsList></CommentsList>

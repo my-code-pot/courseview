@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Header } from "../../styles/header.style";
+import { BlackText } from "../../styles/text.style";
 import SideBarListItem from "./SideBarListItem";
 const SideBar = ({departments}) => {
     let list=[]
@@ -8,7 +8,7 @@ const SideBar = ({departments}) => {
     }
     return (
       <div className="ml-10 mt-6">
-        <Header className="ml-2 text-4xl mb-7">Departments</Header>
+        <BlackText className="ml-2 text-4xl mb-7">Departments</BlackText>
         {list}
       </div>
     )

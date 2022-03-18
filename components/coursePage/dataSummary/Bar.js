@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-const Bar = () => {
+const Bar = ({percentage}) => {
     const styleParent={
         width:'400px',
         backgroundColor:'rgb(240, 240, 240)',
@@ -8,7 +8,7 @@ const Bar = () => {
     }
     const styleChild ={
         borderRadius: '10px',
-        width:'60%',
+        width:"50%",
         backgroundColor:'rgb(0, 170, 0)',
         paddingLeft:"5%"
     }
