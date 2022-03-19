@@ -8,13 +8,14 @@ const Bar = ({percentage}) => {
     }
     const styleChild ={
         borderRadius: '10px',
-        width:"50%",
+        width:`${percentage}`,
         backgroundColor:'rgb(0, 170, 0)',
-        paddingLeft:"5%"
+        paddingLeft:`10%`,
+        color:"rgb(0, 5, 0)",
     }
   return (
-    <div    style={styleParent}>
-      <div style={styleChild}>50%</div>
+    <div style={styleParent}>
+      <div  className="font-bold text-slate-700 rounded-lg " style={styleChild}>{percentage}</div>
     </div>
   )
 }
