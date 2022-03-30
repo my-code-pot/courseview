@@ -29,6 +29,9 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   const response=await fetch('http://localhost:3000/api/getDepts');
   const data=await response.json(); 
+  const course=context.params.course;
+  const res2=await fetch('http://localhost:3000/api/courses/Art and Art History');
+  const data2=await res2.json();
   return {
     props: {data}, // will be passed to the page component as props
   }

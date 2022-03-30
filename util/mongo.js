@@ -1,7 +1,9 @@
-import { MongoClient } from "mongodb";
+const {MongoClient} = require("mongodb");
 
-const connectToMongo = async (callback) => {
-  return await MongoClient.connect(process.env.MONGODB_URI);
+const connectToMongo = async () => {
+  const client =  await MongoClient.connect(process.env.MONGODB_URI);
+  console.log(client)
+  return client
 };
 
 export default connectToMongo;
