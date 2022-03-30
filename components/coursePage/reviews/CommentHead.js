@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import Link from "next/link";
-const CommentHead = () => {
+const CommentHead = ({name,term,professor}) => {
     return (
         <div className="flex">
             <img width="40" height="40"  src="/agree icon.jpeg"></img>
-            <Main>Ibrahim Hassouna</Main>
-            <Side>Fall 2021</Side>
-            <Side>Professor Rosanna Picascia</Side>
+            <Main>{name}</Main>
+            <Side>{term}</Side>
+            <Side>{professor}</Side>
         </div>
     )
   };

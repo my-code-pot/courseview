@@ -3,12 +3,12 @@ import Link from "next/link";
 import CommentHead from "./CommentHead";
 import CommentText from "./CommentText";
 import CommentReactions from "./CommentReactions";
-const Comment = () => {
+const Comment = ({commentData}) => {
     return (
         <StyledComment>
-            <CommentHead></CommentHead>
-            <CommentText text="I don't know what has gotten into him to be acting like this. I was in utter shock upon discovering the thiWngs that he had done in such a short period of time. e know he suffered from depression around the time my daughter in law was pregnant."></CommentText>
-            <CommentReactions></CommentReactions>
+            <CommentHead name={commentData.name} term={commentData.term} professor={commentData.professor}></CommentHead>
+            <CommentText text={commentData.text}></CommentText>
+            <CommentReactions likes={commentData.likes} dislikes={commentData.dislikes}></CommentReactions>
         </StyledComment>
     )
   };

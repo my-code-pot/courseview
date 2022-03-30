@@ -13,6 +13,7 @@ export async function getServerSideProps(){
     const db = client.db()
     const response=await fetch('http://localhost:3000/api/getAllCourses');
     const courses=await response.json(); 
+    console.log(courses[0].slice(-2), )
     const dataSummary ={
       overallQuality:"3/5",
       difficulty:"2.4/5",

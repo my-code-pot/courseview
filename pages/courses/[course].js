@@ -2,13 +2,13 @@ import React from "react";
 import { useRouter } from 'next/router';
 import SideBar from '../../components/sideBar/Sidebar';
 import CoursePageMainDiv from "../../components/coursePage/CoursePageMainDiv";
-const course = (props) => {
+const course = ({departments,courseData}) => {
   const router = useRouter();
   const { course } = router.query;
   return (
     <div className="flex">
-    <SideBar departments={props.data}></SideBar>
-    <CoursePageMainDiv courseName={course}></CoursePageMainDiv> 
+    <SideBar departments={departments}></SideBar>
+    <CoursePageMainDiv courseData={courseData}></CoursePageMainDiv> 
     </div>
   );
 };
@@ -28,12 +28,14 @@ export async function getStaticPaths() {
 }
 export async function getStaticProps(context) {
   const response=await fetch('http://localhost:3000/api/getDepts');
-  const data=await response.json(); 
+  const departments=await response.json(); 
   const course=context.params.course;
-  const res2=await fetch('http://localhost:3000/api/courses/Art and Art History');
-  const data2=await res2.json();
+  const courseData=await (await fetch('http://localhost:3000/api/courses/'+course)).json();
   return {
-    props: {data}, // will be passed to the page component as props
+    props: {
+      departments:departments,
+      courseData:courseData
+    }, // will be passed to the page component as props
   }
 }
 export default course;

@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from "styled-components";
-const CommentReactions = () => {
+const CommentReactions = ({likes,dislikes}) => {
     return (
         <Main>
-         <ReactionsNumber className='bottom:10px'>10</ReactionsNumber>
+         <ReactionsNumber className='bottom:10px'>{likes}</ReactionsNumber>
          <img width="60" height="60"  src="/like.jpeg"></img>
-         <ReactionsNumber>10</ReactionsNumber>
+         <ReactionsNumber>{dislikes}</ReactionsNumber>
          <img width="60" height="60"  src="/like.jpeg"></img>
         </Main>
     )

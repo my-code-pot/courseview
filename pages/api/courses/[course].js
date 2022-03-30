@@ -7,11 +7,9 @@ const handler = async (req, res) => {
     const db = client.db();
     const coursesData = db.collection("course_data");
     const {course}=req.query;
-    const courseData = await coursesData.find({}).toArray();
-    console.log(courseData);
+    const courseData = await coursesData.findOne({name:course+" "});
     client.close();
-    if (courseData.length > 0) {
-      const courseData=courseData;
+    if (courseData !==null) {
       res.status(200).json(courseData);
     } else {
       res.status(401).json({ message: "No departments found" });

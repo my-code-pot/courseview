@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import Link from "next/link";
 import Comment from "./Comment";
-const CommentsList = () => {
+const CommentsList = ({reviews}) => {
     const comments=[];
     for (let i=0;i<4;i++){
-        comments.push(<Comment></Comment>);
+        comments.push(<Comment commentData={reviews[i]}></Comment>);
     }
     return (
         <StyledCommentsList >

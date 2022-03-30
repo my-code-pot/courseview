@@ -1,6 +1,6 @@
 import React from 'react'
 import { BlackText } from '../../../styles/text.style'
-const Difficulty = () => {
+const Difficulty = ({difficulty}) => {
   const scoreStyle={
     position:'relative',
     left:'5%',
@@ -9,7 +9,7 @@ const Difficulty = () => {
   return (
     <div className='my-5'>
          <BlackText style={{fontSize:"20px"}}>Difficulty</BlackText>
-         <BlackText style={scoreStyle}>2.4/5</BlackText>
+         <BlackText style={scoreStyle}>{difficulty}</BlackText>
     </div>
   )
 }

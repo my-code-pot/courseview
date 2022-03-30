@@ -5,18 +5,18 @@ import OverallQuality from './OverallQuality'
 import WillTakeAgain from './BarData'
 import BarData from './BarData'
 import Difficulty from './Difficulty'
-const DataSummary = () => {
+const DataSummary = ({dataSummary}) => {
   return (
     <div>
       <RedText className='mb-3'>Reviews Summary:</RedText>
       <div className='flex'>
         <div className='mx-4'>
-          <OverallQuality></OverallQuality>
-          <BarData percentage="90%"  name="Will take again"></BarData>
+          <OverallQuality overallQuality={dataSummary.overallQuality}></OverallQuality>
+          <BarData percentage={dataSummary.willTakeAgain+"%"}  name="Will take again" ></BarData>
         </div>
         <div className='ml-8'>
-          <Difficulty></Difficulty>
-          <BarData percentage="30%" name="Organization"></BarData>
+          <Difficulty difficulty={dataSummary.difficulty}></Difficulty>
+          <BarData percentage={dataSummary.organization+"%"} name="Organization"></BarData>
         </div>
       </div>
     </div>
