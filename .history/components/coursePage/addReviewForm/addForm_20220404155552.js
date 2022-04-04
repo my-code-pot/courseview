@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import DifficultyBar from "./Diffbar";
+import DifficultyBar from "./Diff";
 import styled from "styled-components";
 const AddForm = () => {
   const [inputs, setInputs] = useState({
@@ -105,7 +105,7 @@ const AddForm = () => {
         />
         <input className="my-6" type="submit" />
       </div>
-      <DifficultyBar></DifficultyBar>
+      <Rate></Rate>
     </form>
   );
 };

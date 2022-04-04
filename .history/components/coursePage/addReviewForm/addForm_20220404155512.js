@@ -105,7 +105,7 @@ const AddForm = () => {
         />
         <input className="my-6" type="submit" />
       </div>
-      <DifficultyBar></DifficultyBar>
+      <Rate></Rate>
     </form>
   );
 };
