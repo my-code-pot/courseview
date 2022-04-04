@@ -1,6 +1,6 @@
 import Layout from "../components/Layout";
 import "../styles/global.css";
-import "../styles/rate.scss"
+import "../styles/rate.css"
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 const GlobalStyle = createGlobalStyle`
   body {
