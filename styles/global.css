@@ -4,3 +4,13 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+
+
+
+label {
+   display: block; 
+   margin-top: 2%;
+   margin-bottom: 2%;
+}
+

@@ -1,5 +1,6 @@
 import Layout from "../components/Layout";
 import "../styles/global.css";
+import "../styles/rate.scss"
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 const GlobalStyle = createGlobalStyle`
   body {
@@ -17,14 +18,14 @@ const theme = {
 
 function MyApp({ Component, pageProps }) {
   return (
-    <>
+    <div className="text-slate-700">
       <GlobalStyle />
       <ThemeProvider theme={theme}>
         <Layout>
         <Component {...pageProps} />
         </Layout>
       </ThemeProvider>
-    </>
+      </div>
   );
 }
 
