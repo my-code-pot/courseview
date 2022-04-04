@@ -3,6 +3,7 @@ import { useState } from "react";
 import DifficultyBar from "./Diffbar";
 import styled from "styled-components";
 const AddForm = () => {
+  const [diff,setDiff]=useState("");
   const [inputs, setInputs] = useState({
     name: "",
     semester: "",
@@ -12,7 +13,10 @@ const AddForm = () => {
     organization: "",
     difficulty: "",
   });
-
+  const setDifficulty = (difficulty)=>{
+    setDiff(difficulty)
+    console.log(diff);
+  }
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
@@ -29,7 +33,6 @@ const AddForm = () => {
       className="font-bold bg-slate-50 p-5 text-2xl rounded-lg"
       onSubmit={handleSubmit}
     >
-      <div className="flex">
         <Input>
           <label>Name:</label>
           <input
@@ -48,16 +51,9 @@ const AddForm = () => {
             onChange={handleChange}
           />
         </Input>
-      </div>
-      <div className="flex">
         <Input>
           <label>Difficulty:</label>
-          <input
-            type="text"
-            name="difficulty"
-            value={inputs.difficulty}
-            onChange={handleChange}
-          />
+          <DifficultyBar setDifficulty={setDifficulty}></DifficultyBar>
         </Input>
         <Input>
           <label>Organization:</label>
@@ -68,8 +64,6 @@ const AddForm = () => {
             onChange={handleChange}
           />
         </Input>
-      </div>
-      <div className="flex">
         <Input>
           <label>Do you recommend:</label>
           <input
@@ -88,7 +82,6 @@ const AddForm = () => {
             onChange={handleChange}
           />
         </Input>
-      </div>
       <div
         style={{
           display: "flex",
@@ -105,7 +98,6 @@ const AddForm = () => {
         />
         <input className="my-6" type="submit" />
       </div>
-      <DifficultyBar></DifficultyBar>
     </form>
   );
 };
@@ -114,5 +106,7 @@ const Input = styled.div.attrs({
 })`
   margin-right: 30%;
   margin-bottom: 5%;
+  display: flex;
+  flex-direction: column;
 `;
 export default AddForm;

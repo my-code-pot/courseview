@@ -7,7 +7,7 @@ const colors = ["#219653", "#8DCF6F", "#F1CA4B", "#F29949", "#EB5756"];
 const hover_colors = ["#9acbab", "#c8e7b9", "#f8e4aa", "#facca7", "#f8adac"];
 const levels = ["Very Easy", "Easy", "Medium", "Hard", "Very Hard"];
 
-const DifficultyBar = () => {
+const DifficultyBar = (props) => {
   const [bgColors, setBgColors] = useState([
     "None",
     "None",
@@ -21,12 +21,14 @@ const DifficultyBar = () => {
 
   const handleClick = (i) => {
     setTempLevel([]);
-    setClickLevel(levels[i]);
-    if ((i == 4 || bgColors[i + 1] === "None") && bgColors[i] === "dark") {
+    if (levels[i]===clickLevel) {
       setTempLevel(["Very Easy", "Very Hard"]);
       setClickLevel("");
+      props.setDifficulty("");
       setBgColors(bgColors.map((clk) => "None"));
     } else {
+      setClickLevel(levels[i]);
+      props.setDifficulty(levels[i]);
       setBgColors(
         bgColors.map((clk, j) => {
           if (j <= i) {
@@ -41,7 +43,6 @@ const DifficultyBar = () => {
   const handleHover = (i) => {
     setCurrentHoverLevel(levels[i]);
     setTempLevel([]);
-    // setClicked(clicked.map((clk) => false));
     setBgColors(
       bgColors.map((hv, j) => {
         if (j <= i) {
@@ -83,7 +84,6 @@ const DifficultyBar = () => {
       }
     }
   };
-  console.log(clickLevel);
   return (
     <>
       <Bar>
@@ -140,6 +140,7 @@ const Bar = styled.div`
   height: 5vh;
   display: flex;
   flex-direction: row;
+  margin-left: 20%;
 `;
 const Left = styled.div`
   width: 6vw;
@@ -174,4 +175,6 @@ const Diff = styled.div`
   justify-content: space-between;
   width: 30vw;
   height: 5vh;
+  margin-left: 20%;
+  font-size: small;
 `;
