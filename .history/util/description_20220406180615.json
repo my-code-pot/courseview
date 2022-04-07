@@ -1,0 +1,14 @@
+{
+  "dept": {
+    "crn": {
+      "title": "full_name",
+      "name": "name",
+      "description": "description"
+    },
+    "crn": {
+      "title": "full_name",
+      "name": "name",
+      "description": "description"
+    }
+  }
+}
