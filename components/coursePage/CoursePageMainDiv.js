@@ -5,14 +5,20 @@ import CourseDescription from "./CourseDescription";
 import DataSummary from "./dataSummary/DataSummary";
 import AddForm from "./addReviewForm/addForm";
 const CoursePageMainDiv = ({ courseData }) => {
+  let n=courseData.number_of_reviews
+  const dataSummary= {
+    "overallQuality":courseData.sum_of_overall_quality/n,
+    "organization":courseData.sum_of_organization/n,
+    "willTakeAgain":courseData.sum_of_will_take_again/n,
+    "difficulty":courseData.sum_of_difficulty/n,
+  }
   return (
     <StyledCoursePageMainDiv>
       <BlackText className="text-3xl"> {courseData.name}</BlackText>
-      <CourseDescription></CourseDescription>
-      <DataSummary dataSummary={courseData.dataSummary}></DataSummary>
-      <AddForm></AddForm>
+      <CourseDescription description={courseData.description} ></CourseDescription>
+      <DataSummary dataSummary={dataSummary}></DataSummary>
+      <AddForm courseName={courseData.title}></AddForm>
       <CommentsList reviews={courseData.reviews}></CommentsList>
-      {/* <Rate></Rate> */}
     </StyledCoursePageMainDiv>
   );
 };

@@ -7,7 +7,7 @@ import BarData from './BarData'
 import Difficulty from './Difficulty'
 const DataSummary = ({dataSummary}) => {
   return (
-    <div>
+    <div className='mb-6'>
       <RedText className='mb-3'>Reviews Summary:</RedText>
       <div className='flex'>
         <div className='mx-4'>

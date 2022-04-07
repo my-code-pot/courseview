@@ -5,9 +5,9 @@ import styled from "styled-components";
 // Style constants
 const colors = ["#219653", "#8DCF6F", "#F1CA4B", "#F29949", "#EB5756"];
 const hover_colors = ["#9acbab", "#c8e7b9", "#f8e4aa", "#facca7", "#f8adac"];
-const levels = ["Very Easy", "Easy", "Medium", "Hard", "Very Hard"];
+// const levels = ["Very Easy", "Easy", "Medium", "Hard", "Very Hard"];
 
-const DifficultyBar = (props) => {
+const SelectionBar = ({setRate,levels}) => {
   const [bgColors, setBgColors] = useState([
     "None",
     "None",
@@ -17,18 +17,18 @@ const DifficultyBar = (props) => {
   ]);
   const [clickLevel, setClickLevel] = useState("");
   const [currentHoverLevel, setCurrentHoverLevel] = useState("");
-  const [tempLevel, setTempLevel] = useState(["Very Easy", "Very Hard"]);
+  const [tempLevel, setTempLevel] = useState([levels[0],levels[4]]);
 
   const handleClick = (i) => {
     setTempLevel([]);
     if (levels[i]===clickLevel) {
-      setTempLevel(["Very Easy", "Very Hard"]);
+      setTempLevel([levels[0],levels[4]]);
       setClickLevel("");
-      props.setDifficulty("");
+      setRate("");
       setBgColors(bgColors.map((clk) => "None"));
     } else {
       setClickLevel(levels[i]);
-      props.setDifficulty(levels[i]);
+      setRate(levels[i]);
       setBgColors(
         bgColors.map((clk, j) => {
           if (j <= i) {
@@ -68,7 +68,7 @@ const DifficultyBar = (props) => {
       return;
     } else {
       if (clickLevel === "") {
-        setTempLevel(["Very Easy", "Very Hard"]);
+        setTempLevel([levels[0],levels[4]]);
         setBgColors(bgColors.map((clk) => "None"));
       } else {
         let j = levels.indexOf(clickLevel);
@@ -132,7 +132,7 @@ const DifficultyBar = (props) => {
   );
 };
 
-export default DifficultyBar;
+export default SelectionBar;
 
 const Bar = styled.div`
   width: 30vw;

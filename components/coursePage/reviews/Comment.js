@@ -6,7 +6,7 @@ import CommentReactions from "./CommentReactions";
 const Comment = ({commentData}) => {
     return (
         <StyledComment>
-            <CommentHead name={commentData.name} term={commentData.term} professor={commentData.professor}></CommentHead>
+            <CommentHead name={commentData.name} term={commentData.semester} professor={commentData.professor}></CommentHead>
             <CommentText text={commentData.text}></CommentText>
             <CommentReactions likes={commentData.likes} dislikes={commentData.dislikes}></CommentReactions>
         </StyledComment>
