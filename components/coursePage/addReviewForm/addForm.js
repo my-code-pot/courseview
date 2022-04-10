@@ -31,6 +31,23 @@ const AddForm = ({courseName}) => {
   const setOrganization = (organization)=>{
     setInputs((values) => ({ ...values, organization: organization }));
   }
+  const changeInputsToNumbers =()=>{
+      const newInputs = {
+        name: inputs.name,
+        semester: inputs.semester,
+        will_take_again: 0,
+        professor: inputs.professor,
+        review: inputs.review,
+        organization: organizationLevels.indexOf(inputs.organization)+1,
+        difficulty: difficultyLevels.indexOf(inputs.difficulty)+1,
+        quality:qualityLevels.indexOf(inputs.quality)+1,
+      }
+      if (inputs.recommendation=="yes"){
+        newInputs.will_take_again=1;
+      }
+      return newInputs;
+      
+  }
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
@@ -42,7 +59,8 @@ const AddForm = ({courseName}) => {
       alert("please fill all fields");
       return;
     }
-    axios.post("http://localhost:3000/api/courses/"+courseName,inputs)
+    const newInputs=changeInputsToNumbers();
+    axios.post("http://localhost:3000/api/courses/"+courseName,newInputs)
     .then (response =>  {
       console.log(response)
     })

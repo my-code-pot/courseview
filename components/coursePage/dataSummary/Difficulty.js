@@ -9,7 +9,7 @@ const Difficulty = ({difficulty}) => {
   return (
     <div className='my-5'>
          <BlackText style={{fontSize:"20px"}}>Difficulty</BlackText>
-         <BlackText style={scoreStyle}>{difficulty}</BlackText>
+         <BlackText style={scoreStyle}>{difficulty}%</BlackText>
     </div>
   )
 }

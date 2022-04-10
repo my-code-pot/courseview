@@ -5,7 +5,7 @@ const handler = async (req, res) => {
   if (req.method === "GET") {
     const client = await connectToMongo();
     const db = client.db();
-    const dept = db.collection("departmentsCourses");
+    const dept = db.collection("scrappedData");
     const departments = await dept.find({}).toArray();
     const departmentsNames=departments.map((department)=>(department.name))
     client.close();
