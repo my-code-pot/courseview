@@ -2,7 +2,7 @@ import React from "react";
 import { useRouter } from 'next/router';
 import SideBar from '../../components/sideBar/Sidebar';
 import CoursePageMainDiv from "../../components/coursePage/CoursePageMainDiv";
-const course = ({departments,courseData}) => {
+const Course = ({departments,courseData}) => {
   const router = useRouter();
   const { course } = router.query;
   return (
@@ -38,4 +38,4 @@ export async function getStaticProps(context) {
     }, // will be passed to the page component as props
   }
 }
-export default course;
+export default Course;

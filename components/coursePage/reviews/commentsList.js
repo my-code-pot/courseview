@@ -7,7 +7,7 @@ const CommentsList = ({reviews}) => {
         <StyledCommentsList >
             <RedText>Reviews:</RedText>
             <div>
-            {reviews.map(review => <Comment commentData={review}></Comment>)}
+            {reviews.map(review => <Comment key={review.id} commentData={review}></Comment>)}
             </div>
         </StyledCommentsList>
     )

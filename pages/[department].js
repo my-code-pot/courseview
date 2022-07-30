@@ -2,7 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import CoursesList from '../components/departmentPage/CoursesList';
 import SideBar from '../components/sideBar/Sidebar';
-function index(props) {
+const Indix = (props) => {
   const router = useRouter();
   const { department } = router.query;
   return (
@@ -42,4 +42,4 @@ export async function getStaticProps(context) {
   }
 }
 
-export default index;
+export default Indix;

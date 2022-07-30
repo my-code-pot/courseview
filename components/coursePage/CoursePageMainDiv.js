@@ -7,10 +7,10 @@ import AddForm from "./addReviewForm/addForm";
 const CoursePageMainDiv = ({ courseData }) => {
   let n=courseData.number_of_reviews;
   const dataSummary= {
-    "overallQuality":((courseData.sum_of_overall_quality/n)/6)*100,
-    "organization":((courseData.sum_of_organization/n)/6)*100,
-    "willTakeAgain":(courseData.sum_of_will_take_again/n)*100,
-    "difficulty":((courseData.sum_of_difficulty/n)/6)*100,
+    "overallQuality":Math.round(((courseData.sum_of_overall_quality/n)/5)*100),
+    "organization":Math.round(((courseData.sum_of_organization/n)/5)*100),
+    "willTakeAgain":Math.round((courseData.sum_of_will_take_again/n)*100),
+    "difficulty":Math.round((courseData.sum_of_difficulty/n)/5*100),
   }
   return (
     <StyledCoursePageMainDiv>
